@@ -28,7 +28,7 @@ def generate_csv(file_index, rows=10):
 
 if __name__ == "__main__":
     logger.info("Starting CSV generation...")
-    for i in range(7):
+    for i in range(10):
         generate_csv(i)
-        time.sleep(5)
+        time.sleep(3)
     logger.info("CSV generation complete.")
