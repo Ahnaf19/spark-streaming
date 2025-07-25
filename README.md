@@ -142,6 +142,17 @@ python -c "from pyspark.sql import SparkSession; print('PySpark installed succes
 
 ## Running the Project
 
+> First export repo root as PYTTHONPATH
+
+```bash
+# linux or macOS
+export PYTHONPATH=.
+
+# windows
+$env:PYTHONPATH = "." # powershell
+set PYTHONPATH=. # cmd
+```
+
 The stream processor now supports three different modes via CLI options:
 
 ### Mode 1: CSV with Aggregation (Default)
@@ -149,9 +160,9 @@ The stream processor now supports three different modes via CLI options:
 Processes CSV files and shows event count aggregations:
 
 ```bash
-PYTHON_PATH=. python streaming/stream_processor.py --mode csv-agg
+python streaming/stream_processor.py --mode csv-agg
 # OR simply:
-PYTHON_PATH=. python streaming/stream_processor.py
+python streaming/stream_processor.py
 ```
 
 ### Mode 2: CSV Log Only
@@ -159,7 +170,7 @@ PYTHON_PATH=. python streaming/stream_processor.py
 Processes CSV files and displays raw data without aggregation:
 
 ```bash
-PYTHON_PATH=. python streaming/stream_processor.py --mode csv-log
+python streaming/stream_processor.py --mode csv-log
 ```
 
 ### Mode 3: WebSocket Streaming
@@ -171,10 +182,10 @@ Reads text data from a WebSocket connection and performs word count:
 nc -lk 9999  # On macOS/Linux (netcat)
 
 # Then start the stream processor:
-PYTHON_PATH=. python streaming/stream_processor.py --mode websocket
+python streaming/stream_processor.py --mode websocket
 
 # Or with custom host/port:
-PYTHON_PATH=. python streaming/stream_processor.py --mode websocket --host localhost --port 8888
+python streaming/stream_processor.py --mode websocket --host localhost --port 8888
 ```
 
 ### Data Generation for CSV Modes
@@ -192,7 +203,7 @@ python generator/csv_writer.py
 1. **Terminal 1 - Start Stream Processor:**
 
 ```bash
-PYTHON_PATH=. python streaming/stream_processor.py --mode csv-agg
+python streaming/stream_processor.py --mode csv-agg
 ```
 
 2. **Terminal 2 - Generate Data:**
@@ -212,7 +223,7 @@ nc -lk 9999
 2. **Terminal 2 - Start Stream Processor:**
 
 ```bash
-PYTHON_PATH=. python streaming/stream_processor.py --mode websocket
+python streaming/stream_processor.py --mode websocket
 ```
 
 3. **Terminal 1 - Type messages** to send to the stream (press Enter after each message)
@@ -220,7 +231,7 @@ PYTHON_PATH=. python streaming/stream_processor.py --mode websocket
 ### CLI Options Reference
 
 ```bash
-PYTHON_PATH=. python streaming/stream_processor.py --help
+python streaming/stream_processor.py --help
 ```
 
 Available options:
