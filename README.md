@@ -107,7 +107,6 @@ brew install openjdk@11
 ```bash
 # If using git
 git clone <repository-url>
-cd spark-streaming
 
 # Or download and extract the project files
 ```
@@ -135,7 +134,7 @@ pip install -r requirements.txt
 python -c "from pyspark.sql import SparkSession; print('PySpark installed successfully!')"
 ```
 
-## 🏃‍♂️ Running the Project
+## Running the Project
 
 The stream processor now supports three different modes via CLI options:
 
@@ -144,10 +143,9 @@ The stream processor now supports three different modes via CLI options:
 Processes CSV files and shows event count aggregations:
 
 ```bash
-cd spark-streaming
-python streaming/stream_processor.py --mode csv-agg
+PYTHON_PATH=. python streaming/stream_processor.py --mode csv-agg
 # OR simply:
-python streaming/stream_processor.py
+PYTHON_PATH=. python streaming/stream_processor.py
 ```
 
 ### Mode 2: CSV Log Only
@@ -155,8 +153,7 @@ python streaming/stream_processor.py
 Processes CSV files and displays raw data without aggregation:
 
 ```bash
-cd spark-streaming
-python streaming/stream_processor.py --mode csv-log
+PYTHON_PATH=. python streaming/stream_processor.py --mode csv-log
 ```
 
 ### Mode 3: WebSocket Streaming
@@ -168,11 +165,10 @@ Reads text data from a WebSocket connection and performs word count:
 nc -lk 9999  # On macOS/Linux (netcat)
 
 # Then start the stream processor:
-cd spark-streaming
-python streaming/stream_processor.py --mode websocket
+PYTHON_PATH=. python streaming/stream_processor.py --mode websocket
 
 # Or with custom host/port:
-python streaming/stream_processor.py --mode websocket --host localhost --port 8888
+PYTHON_PATH=. python streaming/stream_processor.py --mode websocket --host localhost --port 8888
 ```
 
 ### Data Generation for CSV Modes
@@ -180,7 +176,6 @@ python streaming/stream_processor.py --mode websocket --host localhost --port 88
 For CSV modes, generate data using:
 
 ```bash
-cd spark-streaming
 python generator/csv_writer.py
 ```
 
@@ -191,14 +186,12 @@ python generator/csv_writer.py
 1. **Terminal 1 - Start Stream Processor:**
 
 ```bash
-cd spark-streaming
-python streaming/stream_processor.py --mode csv-agg
+PYTHON_PATH=. python streaming/stream_processor.py --mode csv-agg
 ```
 
 2. **Terminal 2 - Generate Data:**
 
 ```bash
-cd spark-streaming
 python generator/csv_writer.py
 ```
 
@@ -213,8 +206,7 @@ nc -lk 9999
 2. **Terminal 2 - Start Stream Processor:**
 
 ```bash
-cd spark-streaming
-python streaming/stream_processor.py --mode websocket
+PYTHON_PATH=. python streaming/stream_processor.py --mode websocket
 ```
 
 3. **Terminal 1 - Type messages** to send to the stream (press Enter after each message)
@@ -222,7 +214,7 @@ python streaming/stream_processor.py --mode websocket
 ### CLI Options Reference
 
 ```bash
-python streaming/stream_processor.py --help
+PYTHON_PATH=. python streaming/stream_processor.py --help
 ```
 
 Available options:
