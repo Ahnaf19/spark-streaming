@@ -2,7 +2,7 @@
 
 This document provides a comprehensive guide to PySpark Structured Streaming and its various configuration options, organized by component.
 
-## 🌊 What is PySpark Structured Streaming?
+## What is PySpark Structured Streaming?
 
 **PySpark Structured Streaming** is Apache Spark's scalable and fault-tolerant stream processing engine built on the Spark SQL engine. It treats live data streams as unbounded tables that are continuously appended to, allowing you to process streaming data using the same DataFrame/Dataset API used for batch processing.
 
@@ -59,7 +59,7 @@ Input Stream → DataFrame → Transformations → Output Stream
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [What is PySpark Structured Streaming?](#what-is-pyspark-structured-streaming)
 - [Quick Start Guide](#quick-start-guide)
@@ -76,7 +76,7 @@ Input Stream → DataFrame → Transformations → Output Stream
 
 ---
 
-## 🚀 Quick Start Guide
+## Quick Start Guide
 
 Here's a minimal example to get you started:
 
@@ -115,7 +115,7 @@ query.awaitTermination()
 
 ---
 
-## 💡 Best Practices
+## Best Practices
 
 1. **Always specify schema** for production workloads - improves performance and prevents errors
 2. **Use checkpointing** for fault tolerance - essential for production deployments
@@ -130,7 +130,7 @@ query.awaitTermination()
 
 ---
 
-## 📖 Reading Data (Source Options)
+## Reading Data (Source Options)
 
 ### File-based Sources (CSV, JSON, Parquet)
 
@@ -200,7 +200,7 @@ kafkaDF = spark.readStream \
 
 ---
 
-## 🗂️ Schema Configuration
+## Schema Configuration
 
 ### Schema Definition Methods
 
@@ -237,7 +237,7 @@ schema = existing_df.schema
 
 ---
 
-## 📁 Data Formats
+## Data Formats
 
 ### Input Formats
 
@@ -270,7 +270,7 @@ df = spark.readStream.format("delta").load("path")
 
 ---
 
-## 🔢 Aggregation Operations
+## Aggregation Operations
 
 ### Basic Aggregations
 
@@ -341,7 +341,7 @@ session = df.groupBy(
 
 ---
 
-## 📤 Output Modes
+## Output Modes
 
 | Mode         | Description         | Default Usage                        | When to Use                            | Supported Operations      |
 | ------------ | ------------------- | ------------------------------------ | -------------------------------------- | ------------------------- |
@@ -375,7 +375,7 @@ user_activity = df.groupBy("user_id").count().writeStream \
 
 ---
 
-## 🖥️ Output Formats (Sinks)
+## Output Formats (Sinks)
 
 ### Console Sink
 
@@ -488,7 +488,7 @@ query = df.writeStream \
 
 ---
 
-## ⏰ Trigger Modes
+## Trigger Modes
 
 | Mode                      | Description                 | Default Behavior         | When to Use            | Example                                |
 | ------------------------- | --------------------------- | ------------------------ | ---------------------- | -------------------------------------- |
@@ -525,7 +525,7 @@ query = df.writeStream \
 
 ---
 
-## ⚙️ Common Options
+## Common Options
 
 ### Checkpointing
 
@@ -603,7 +603,7 @@ for progress in query.recentProgress:
 
 ---
 
-## 🚀 Performance Tuning
+## Performance Tuning
 
 ### Optimization Options
 

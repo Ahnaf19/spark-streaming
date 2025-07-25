@@ -3,7 +3,13 @@
 This project demonstrates real-time data processing using PySpark Structured Streaming. It simulates a continuous data stream by generating CSV files and processes them in real-time to perform aggregations and transformations.
 
 > [!NOTE]
-> Developed on `python 3.10.16`.
+> Developed on `python 3.5. **Production Similarity**: Similar to real-time chat, log, or sensor data streams
+
+## Sample Output
+
+### CSV Aggregation Mode (`--mode csv-agg`)
+
+When running the stream processor with aggregation, you'll see output like:
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Spark](https://img.shields.io/badge/spark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white) ![Loguru](https://img.shields.io/badge/loguru-FF9C00?style=for-the-badge&logo=python&logoColor=white) ![MIT License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
 
@@ -21,7 +27,7 @@ This project demonstrates real-time data processing using PySpark Structured Str
 - [Troubleshooting](#troubleshooting)
 - [Learning Objectives](#learning-objectives)
 
-## 🌊 What is PySpark Structured Streaming?
+## What is PySpark Structured Streaming?
 
 **PySpark Structured Streaming** is Apache Spark's scalable and fault-tolerant stream processing engine built on the Spark SQL engine. It treats live data streams as unbounded tables that are continuously appended to, allowing you to process streaming data using the same DataFrame/Dataset API used for batch processing.
 
@@ -40,7 +46,7 @@ This project demonstrates real-time data processing using PySpark Structured Str
 3. **Output Sinks**: Write results to various destinations (console, files, databases, etc.)
 4. **Triggers**: Control when to execute the streaming query (continuous, interval-based, or one-time)
 
-## 🎯 Project Overview
+## Project Overview
 
 This project simulates a real-world streaming scenario where:
 
@@ -55,7 +61,7 @@ This project simulates a real-world streaming scenario where:
 - **Comprehensive Documentation**: Detailed configuration options guide
 - **Production-Ready**: Proper error handling, checkpointing, and monitoring
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 spark-streaming/
@@ -82,7 +88,7 @@ spark-streaming/
 > [!TIP]
 > 📚 **For detailed configuration options**, see [`streaming/README.md`](streaming/README.md) - a comprehensive guide covering all PySpark Structured Streaming configuration options with examples and best practices.
 
-## 🔧 Prerequisites
+## Prerequisites
 
 - **Python 3.8 or newer** (Python 3.10+ recommended for better type hints support)
 - **Java 8 or 11** (required for PySpark)
@@ -100,7 +106,7 @@ If Java is not installed on macOS, install it using:
 brew install openjdk@11
 ```
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### 1. Clone or Download the Repository
 
@@ -230,7 +236,7 @@ Available options:
 - Press `Ctrl+C` in the stream processor terminal to stop the streaming query
 - The data generator will stop automatically after creating 10 files
 
-## 📚 What's Happening Step by Step
+## What's Happening Step by Step
 
 ### CSV Streaming Modes (csv-agg & csv-log)
 
@@ -386,7 +392,7 @@ Batch: 1 (after typing "spark is amazing")
 +---------+-----+
 ```
 
-## ⚙️ Configuration Options
+## Configuration Options
 
 This project demonstrates various PySpark Structured Streaming configuration options. For a comprehensive guide covering all available options, see **[`streaming/README.md`](streaming/README.md)**.
 
@@ -427,7 +433,7 @@ df = spark.readStream \
 
 > 📚 **For complete details, examples, and best practices**, visit [`streaming/README.md`](streaming/README.md)
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -480,7 +486,7 @@ df = spark.readStream \
 
 ---
 
-## 🎓 Learning Objectives
+## Learning Objectives
 
 This project demonstrates:
 
