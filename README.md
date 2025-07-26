@@ -1,4 +1,4 @@
-# PySpark Structured Streaming from CSV
+# PySpark Structured Streaming
 
 This project demonstrates real-time data processing using PySpark Structured Streaming. It simulates a continuous data stream by generating CSV files and processes them in real-time to perform aggregations and transformations.
 
@@ -142,7 +142,7 @@ python -c "from pyspark.sql import SparkSession; print('PySpark installed succes
 
 ## Running the Project
 
-> First export repo root as PYTTHONPATH
+> First export repo root as PYTHONPATH
 
 ```bash
 # linux or macOS
